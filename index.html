@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KICKLIVE - Portal Teknologi, Gadget & Komunitas Gaming</title>
     <meta name="description" content="KICKLIVE adalah portal teknologi dan komunitas gaming yang menyajikan panduan optimalisasi perangkat, analisis keamanan siber, dan tren industri gaming terkini.">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
-    
+
     <!-- Adsterra Popunder (stays in head) -->
     <script src="https://pl29887779.effectivecpmnetwork.com/e4/1b/41/e41b41126d650d9a27878dbeb5315713.js"></script>
 
@@ -237,22 +237,12 @@
                     </svg>
                 </div>
                 <h3 class="text-lg font-bold text-red-400 mb-2">Aset Game/Aplikasi Tidak Ditemukan atau Telah Kedaluwarsa</h3>
-                <p class="text-sm text-slate-400">Silakan periksa kembali URL atau hubungi administrator untuk informasi lebih lanjut.</p>
+                <p class="text-sm text-slate-400" id="errorDetail">Silakan periksa kembali URL atau hubungi administrator untuk informasi lebih lanjut.</p>
             </div>
         </section>
 
-        <!-- ==================== ARTICLE SEO CONTENT ==================== -->
-        <article id="konten-artikel-seo" class="article-body">
-            <div class="flex items-center justify-center py-20">
-                <div class="text-center">
-                    <div class="w-10 h-10 border-2 border-brand-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-                    <p class="text-sm text-slate-500">Memuat artikel...</p>
-                </div>
-            </div>
-        </article>
-
-        <!-- ==================== BANNER ADS DI BAWAH ARTIKEL ==================== -->
-        <div class="ad-banner-container mt-10 mb-6">
+        <!-- ==================== BANNER ADS DI ATAS ARTIKEL (DIPINDAH KE SINI) ==================== -->
+        <div class="ad-banner-container mb-6">
             <script>
               atOptions = {
                 'key' : '90b8ced68ab1ce3c983fa393b5141acb',
@@ -291,6 +281,17 @@
                 <script src="https://www.highperformanceformat.com/666efc25a783cf52a159dafec9aef351/invoke.js"></script>
             </div>
         </div>
+        <!-- ========================================================================== -->
+
+        <!-- ==================== ARTICLE SEO CONTENT (DIMUAT DINAMIS) ==================== -->
+        <article id="konten-artikel-seo" class="article-body">
+            <div class="flex items-center justify-center py-20">
+                <div class="text-center">
+                    <div class="w-10 h-10 border-2 border-brand-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+                    <p class="text-sm text-slate-500">Memuat artikel...</p>
+                </div>
+            </div>
+        </article>
 
         <!-- Article Footer -->
         <div class="mt-12 pt-8 border-t border-slate-800">
@@ -309,7 +310,7 @@
             </div>
         </div>
 
-        <!-- Related Articles -->
+        <!-- Related Articles Section -->
         <section class="mt-16 pt-10 border-t border-slate-800">
             <h2 class="text-xl font-bold text-white mb-6">Artikel Terkait</h2>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -378,11 +379,12 @@
         </div>
     </footer>
 
-    <!-- Adsterra Social Bar (MOVED TO BOTTOM) -->
+    <!-- Adsterra Social Bar (at bottom) -->
     <script src="https://pl29887778.effectivecpmnetwork.com/6e/28/35/6e2835eb66e7b47f4448bb555dde2ada.js"></script>
 
     <!-- ==================== JAVASCRIPT LOGIC ==================== -->
     <script>
+        // Konfigurasi
         const URL_SMART_LINK = 'https://www.effectivecpmnetwork.com/dx5egd6h?key=7cd5fc81789226deef1669f9bb8e6bf0';
         const URL_DIRECT_LINK = '';
         const DATA_JSON_PATH = 'data.json';
@@ -392,6 +394,7 @@
         let actualDownloadUrl = '';
         let gameData = null;
 
+        // DOM refs
         const downloadBtn = document.getElementById('downloadBtn');
         const downloadBtnText = document.getElementById('downloadBtnText');
         const downloadStatus = document.getElementById('downloadStatus');
@@ -399,6 +402,7 @@
         const breadcrumbTitle = document.getElementById('breadcrumbTitle');
         const breadcrumbCategory = document.getElementById('breadcrumbCategory');
         const errorMessage = document.getElementById('errorMessage');
+        const errorDetail = document.getElementById('errorDetail');
         const downloadButtonContainer = document.getElementById('downloadButtonContainer');
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
@@ -420,11 +424,12 @@
             return urlParams.get(paramName);
         }
 
-        function showError() {
+        function showError(msg) {
             downloadButtonContainer.classList.add('hidden');
             errorMessage.classList.remove('hidden');
             downloadBtn.disabled = true;
             document.getElementById('gameInfoCard').classList.add('hidden');
+            if (msg) errorDetail.textContent = msg;
         }
 
         function formatNumber(num) {
@@ -470,6 +475,9 @@
                     img.classList.remove('hidden');
                     placeholder.classList.add('hidden');
                 };
+                img.onerror = function() {
+                    console.warn('Gagal memuat gambar_logo:', data.gambar_logo);
+                };
             }
 
             if (data.video_url) {
@@ -493,42 +501,94 @@
 
         async function loadDownloadData() {
             const id = getUrlParam('id');
-            if (!id) { showError(); return; }
+            console.log('[KICKLIVE] URL Parameter id =', id);
+            console.log('[KICKLIVE] Fetching from:', DATA_JSON_PATH);
+
+            if (!id) {
+                showError('Parameter "id" tidak ditemukan di URL. Contoh: ?id=gta5');
+                console.error('[KICKLIVE] Error: Parameter id tidak ditemukan');
+                return;
+            }
+
             try {
-                const response = await fetch(DATA_JSON_PATH);
-                if (!response.ok) throw new Error('Gagal memuat data.json: HTTP ' + response.status);
-                const data = await response.json();
-                if (data && data[id]) renderGameInfo(data[id]);
-                else throw new Error('ID tidak ditemukan dalam database');
+                const response = await fetch(DATA_JSON_PATH, {
+                    method: 'GET',
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                console.log('[KICKLIVE] Response status:', response.status);
+                console.log('[KICKLIVE] Response content-type:', response.headers.get('content-type'));
+
+                if (!response.ok) {
+                    throw new Error('HTTP ' + response.status + ' - ' + response.statusText);
+                }
+
+                const text = await response.text();
+                console.log('[KICKLIVE] Raw response (first 200 chars):', text.substring(0, 200));
+
+                let data;
+                try {
+                    data = JSON.parse(text);
+                } catch (parseErr) {
+                    throw new Error('JSON parse error: ' + parseErr.message);
+                }
+
+                console.log('[KICKLIVE] Parsed data keys:', Object.keys(data));
+                console.log('[KICKLIVE] Looking for ID:', id);
+
+                if (data && data[id]) {
+                    console.log('[KICKLIVE] Game data found for', id);
+                    renderGameInfo(data[id]);
+                } else {
+                    throw new Error('ID "' + id + '" tidak ditemukan dalam data.json. ID tersedia: ' + Object.keys(data).join(', '));
+                }
+
             } catch (error) {
-                console.error('KICKLIVE Error:', error);
-                showError();
+                console.error('[KICKLIVE] Fetch Error:', error);
+                showError('Gagal memuat data: ' + error.message + '. Pastikan data.json ada di direktori yang sama dan server mengizinkan CORS.');
             }
         }
 
         async function loadArticleContent() {
             try {
                 const response = await fetch(ARTIKEL_HTML_PATH);
-                if (!response.ok) throw new Error('Gagal memuat artikel.html: HTTP ' + response.status);
+                if (!response.ok) throw new Error('HTTP ' + response.status);
                 const htmlContent = await response.text();
                 kontenArtikel.innerHTML = htmlContent;
             } catch (error) {
-                console.error('KICKLIVE Artikel Error:', error);
+                console.error('[KICKLIVE] Artikel Error:', error);
                 kontenArtikel.innerHTML = `<div class="text-center py-10"><p class="text-slate-500">Gagal memuat artikel. Silakan muat ulang halaman.</p></div>`;
             }
         }
 
         let countdownInterval = null;
 
-        downloadBtn.addEventListener('click', function() {
+        downloadBtn.addEventListener('click', function(e) {
             if (downloadBtn.disabled) return;
 
             if (isFirstClick) {
-                // ========== TAHAP 1: BUKA SMART LINK DI BACKGROUND TAB, TETAP STAY DI KICKLIVE ==========
-                const adTab = window.open(URL_SMART_LINK, '_blank');
-                if (adTab) {
-                    adTab.blur();        // Blur tab iklan
-                    window.focus();      // Fokus kembali ke tab KICKLIVE
+                // ========== TAHAP 1: POPUNDER SMART LINK ==========
+                // Buka smart link di tab baru, tetap stay di KICKLIVE
+                e.preventDefault();
+
+                // Teknik popunder: buka window, assign about:blank dulu untuk trick browser
+                const popUrl = URL_SMART_LINK;
+
+                // Method 1: window.open dengan noopener (paling reliable di modern browser)
+                const adWindow = window.open(popUrl, '_blank', 'noopener,noreferrer');
+
+                // Method 2: Jika window berhasil dibuka, coba blur dan focus
+                if (adWindow) {
+                    try {
+                        adWindow.blur();
+                        window.focus();
+                        // Tambahan: setTimeout untuk memastikan focus kembali
+                        setTimeout(() => {
+                            try { adWindow.blur(); window.focus(); } catch(e) {}
+                        }, 100);
+                    } catch (err) {
+                        console.log('[KICKLIVE] Popunder blur/focus tidak didukung browser ini');
+                    }
                 }
 
                 isFirstClick = false;
@@ -567,6 +627,7 @@
         });
 
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('[KICKLIVE] DOM loaded. Current URL:', window.location.href);
             loadDownloadData();
             loadArticleContent();
         });
