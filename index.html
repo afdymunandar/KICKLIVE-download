@@ -127,106 +127,6 @@
             <span class="text-slate-400 truncate max-w-[200px]" id="breadcrumbTitle">Artikel</span>
         </nav>
 
-        <!-- ==================== SLOT IKLAN BANNER ATAS ==================== -->
-        <div class="w-full flex justify-center mb-6">
-            <!-- Banner 300x250 -->
-            <script>
-              atOptions = {
-                'key' : '90b8ced68ab1ce3c983fa393b5141acb',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-              };
-            </script>
-            <script src="https://www.highperformanceformat.com/90b8ced68ab1ce3c983fa393b5141acb/invoke.js"></script>
-        </div>
-        <!-- ================================================================ -->
-
-        <!-- ==================== DOWNLOAD GUIDE AREA (ABOVE THE FOLD) ==================== -->
-        <section id="downloadArea" class="bg-dark-800/50 border border-slate-700/50 rounded-2xl p-6 sm:p-8 mb-10">
-            <div class="flex items-center gap-3 mb-6">
-                <div class="w-1 h-8 bg-brand-500 rounded-full"></div>
-                <h2 class="text-xl sm:text-2xl font-bold text-white">Panduan Mengunduh</h2>
-            </div>
-
-            <!-- Video Player Container (YouTube Embed) -->
-            <div class="relative w-full max-w-2xl mx-auto mb-8">
-                <div id="videoContainer" class="aspect-video rounded-xl overflow-hidden bg-dark-900 border border-slate-700/50">
-                    <!-- Video iframe akan di-inject oleh JavaScript dari data.json -->
-                    <div id="videoPlaceholder" class="w-full h-full shimmer flex items-center justify-center">
-                        <div class="text-center">
-                            <div class="w-16 h-16 mx-auto mb-3 rounded-full bg-slate-700/50 flex items-center justify-center">
-                                <svg class="w-8 h-8 text-slate-500" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M8 5v14l11-7z"/>
-                                </svg>
-                            </div>
-                            <p class="text-sm font-medium text-slate-400">Video Preview Gameplay</p>
-                            <p class="text-xs text-slate-600 mt-1">Memuat video...</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ==================== SLOT IKLAN BANNER DI ATAS DOWNLOAD ==================== -->
-            <div class="flex justify-center gap-4 mb-6 flex-wrap">
-                <!-- Banner 160x300 kiri -->
-                <div>
-                    <script>
-                      atOptions = {
-                        'key' : '7ef34204b1387e450712372aa4083223',
-                        'format' : 'iframe',
-                        'height' : 300,
-                        'width' : 160,
-                        'params' : {}
-                      };
-                    </script>
-                    <script src="https://www.highperformanceformat.com/7ef34204b1387e450712372aa4083223/invoke.js"></script>
-                </div>
-                <!-- Banner 160x600 kanan -->
-                <div>
-                    <script>
-                      atOptions = {
-                        'key' : '666efc25a783cf52a159dafec9aef351',
-                        'format' : 'iframe',
-                        'height' : 600,
-                        'width' : 160,
-                        'params' : {}
-                      };
-                    </script>
-                    <script src="https://www.highperformanceformat.com/666efc25a783cf52a159dafec9aef351/invoke.js"></script>
-                </div>
-            </div>
-            <!-- ============================================================================ -->
-
-            <!-- Download Info -->
-            <div class="bg-dark-900/60 border border-slate-700/30 rounded-xl p-4 mb-6 text-center">
-                <p class="text-slate-400 text-sm">Untuk keamanan file, sistem kami akan melakukan verifikasi singkat sebelum unduhan dimulai.</p>
-            </div>
-
-            <!-- Download Button Container -->
-            <div class="text-center" id="downloadButtonContainer">
-                <button id="downloadBtn" class="group relative inline-flex items-center justify-center px-10 py-4 text-lg font-bold text-white bg-gradient-to-r from-brand-600 to-brand-500 rounded-xl shadow-lg shadow-brand-500/20 hover:shadow-brand-500/40 hover:from-brand-500 hover:to-brand-400 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
-                    <svg class="w-6 h-6 mr-3 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-                    </svg>
-                    <span id="downloadBtnText">DOWNLOAD SEKARANG</span>
-                </button>
-                <p class="mt-3 text-xs text-slate-500" id="downloadStatus">File aman — Diperiksa oleh sistem keamanan KICKLIVE</p>
-            </div>
-
-            <!-- Error Message (Hidden by default) -->
-            <div id="errorMessage" class="hidden text-center py-8">
-                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-red-500/10 flex items-center justify-center">
-                    <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
-                    </svg>
-                </div>
-                <h3 class="text-lg font-bold text-red-400 mb-2">Aset Game/Aplikasi Tidak Ditemukan atau Telah Kedaluwarsa</h3>
-                <p class="text-sm text-slate-400">Silakan periksa kembali URL atau hubungi administrator untuk informasi lebih lanjut.</p>
-            </div>
-        </section>
-
         <!-- ==================== GAME INFO CARD ==================== -->
         <section id="gameInfoCard" class="bg-dark-800/50 border border-slate-700/50 rounded-2xl p-6 sm:p-8 mb-10">
             <div class="flex flex-col lg:flex-row gap-6">
@@ -288,20 +188,47 @@
             </div>
         </section>
 
-        <!-- ==================== SLOT IKLAN BANNER DI TENGAH KONTEN ==================== -->
-        <div class="w-full flex justify-center mb-10">
-            <script>
-              atOptions = {
-                'key' : '90b8ced68ab1ce3c983fa393b5141acb',
-                'format' : 'iframe',
-                'height' : 250,
-                'width' : 300,
-                'params' : {}
-              };
-            </script>
-            <script src="https://www.highperformanceformat.com/90b8ced68ab1ce3c983fa393b5141acb/invoke.js"></script>
-        </div>
-        <!-- ========================================================================== -->
+        <!-- ==================== DOWNLOAD GUIDE AREA ==================== -->
+        <section id="downloadArea" class="bg-dark-800/50 border border-slate-700/50 rounded-2xl p-6 sm:p-8 mb-10">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-1 h-8 bg-brand-500 rounded-full"></div>
+                <h2 class="text-xl sm:text-2xl font-bold text-white">Gameplay</h2>
+            </div>
+
+            <!-- Video Player Container (YouTube Embed) -->
+            <div class="relative w-full max-w-2xl mx-auto mb-8">
+                <div id="videoContainer" class="aspect-video rounded-xl overflow-hidden bg-dark-900 border border-slate-700/50">
+                    <!-- Video iframe akan di-inject oleh JavaScript dari data.json -->
+                </div>
+            </div>
+
+            <!-- Download Info -->
+            <div class="bg-dark-900/60 border border-slate-700/30 rounded-xl p-4 mb-6 text-center">
+                <p class="text-slate-400 text-sm">Untuk keamanan file, sistem kami akan melakukan verifikasi singkat sebelum unduhan dimulai.</p>
+            </div>
+
+            <!-- Download Button Container -->
+            <div class="text-center" id="downloadButtonContainer">
+                <button id="downloadBtn" class="group relative inline-flex items-center justify-center px-10 py-4 text-lg font-bold text-white bg-gradient-to-r from-brand-600 to-brand-500 rounded-xl shadow-lg shadow-brand-500/20 hover:shadow-brand-500/40 hover:from-brand-500 hover:to-brand-400 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
+                    <svg class="w-6 h-6 mr-3 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                    </svg>
+                    <span id="downloadBtnText">DOWNLOAD SEKARANG</span>
+                </button>
+                <p class="mt-3 text-xs text-slate-500" id="downloadStatus">File aman — Diperiksa oleh sistem keamanan KICKLIVE</p>
+            </div>
+
+            <!-- Error Message (Hidden by default) -->
+            <div id="errorMessage" class="hidden text-center py-8">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-red-500/10 flex items-center justify-center">
+                    <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-red-400 mb-2">Aset Game/Aplikasi Tidak Ditemukan atau Telah Kedaluwarsa</h3>
+                <p class="text-sm text-slate-400">Silakan periksa kembali URL atau hubungi administrator untuk informasi lebih lanjut.</p>
+            </div>
+        </section>
 
         <!-- ==================== ARTICLE SEO CONTENT (DIMUAT DINAMIS) ==================== -->
         <article id="konten-artikel-seo" class="article-body">
@@ -316,6 +243,7 @@
 
         <!-- ==================== SLOT IKLAN BANNER DI BAWAH ARTIKEL ==================== -->
         <div class="w-full flex justify-center mt-10 mb-10">
+            <!-- Banner 300x250 -->
             <script>
               atOptions = {
                 'key' : '90b8ced68ab1ce3c983fa393b5141acb',
@@ -326,6 +254,36 @@
               };
             </script>
             <script src="https://www.highperformanceformat.com/90b8ced68ab1ce3c983fa393b5141acb/invoke.js"></script>
+        </div>
+
+        <!-- Banner 160x300 + 160x600 -->
+        <div class="flex flex-wrap justify-center gap-4 mb-10">
+            <!-- Banner 160x300 kiri -->
+            <div>
+                <script>
+                  atOptions = {
+                    'key' : '7ef34204b1387e450712372aa4083223',
+                    'format' : 'iframe',
+                    'height' : 300,
+                    'width' : 160,
+                    'params' : {}
+                  };
+                </script>
+                <script src="https://www.highperformanceformat.com/7ef34204b1387e450712372aa4083223/invoke.js"></script>
+            </div>
+            <!-- Banner 160x600 kanan -->
+            <div>
+                <script>
+                  atOptions = {
+                    'key' : '666efc25a783cf52a159dafec9aef351',
+                    'format' : 'iframe',
+                    'height' : 600,
+                    'width' : 160,
+                    'params' : {}
+                  };
+                </script>
+                <script src="https://www.highperformanceformat.com/666efc25a783cf52a159dafec9aef351/invoke.js"></script>
+            </div>
         </div>
         <!-- ========================================================================== -->
 
@@ -397,10 +355,11 @@
                 <div>
                     <h4 class="font-semibold text-white mb-4">Legal</h4>
                     <ul class="space-y-2 text-sm text-slate-400">
-                        <li><a href="#" class="hover:text-brand-400 transition-colors">Kebijakan Privasi</a></li>
+                        <li><a href="privacy-policy.html" class="hover:text-brand-400 transition-colors">Kebijakan Privasi</a></li>
                         <li><a href="#" class="hover:text-brand-400 transition-colors">Syarat dan Ketentuan</a></li>
                         <li><a href="#" class="hover:text-brand-400 transition-colors">Disclaimer</a></li>
-                        <li><a href="#" class="hover:text-brand-400 transition-colors">Kontak</a></li>
+                        <li><a href="about.html" class="hover:text-brand-400 transition-colors">Tentang Kami</a></li>
+                        <li><a href="contact.html" class="hover:text-brand-400 transition-colors">Kontak</a></li>
                     </ul>
                 </div>
             </div>
@@ -476,7 +435,6 @@
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         const videoContainer = document.getElementById('videoContainer');
-        const videoPlaceholder = document.getElementById('videoPlaceholder');
         const kontenArtikel = document.getElementById('konten-artikel-seo');
         const gameDescription = document.getElementById('gameDescription');
         const badgeCategory = document.getElementById('badgeCategory');
