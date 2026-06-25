@@ -1,74 +1,26 @@
 {
-  "gta5": {
-    "judul": "GTA V Mobile Android APK + OBB Data Gratis",
-    "slug": "gta-v-mobile-android",
-    "kategori": "Action / Open World",
-    "ukuran_file": "4.2 GB",
-    "versi": "v2.1.0 (Build 2026.06.15)",
-    "os_minimal": "Android 8.0 (Oreo) atau lebih tinggi",
-    "ram_minimal": "4 GB RAM",
-    "developer": "Rockstar Games / Ported by KICKLIVE Team",
-    "deskripsi_game": "Grand Theft Auto V versi mobile yang dioptimalkan untuk perangkat Android dengan kontrol touch-screen kustom, dukungan gamepad Bluetooth, dan grafis yang disesuaikan agar berjalan mulus pada chipset kelas menengah ke atas. Nikmati pengalaman Los Santos lengkap dalam genggaman tangan.",
+  "game-satu": {
+    "judul": "Nama Game",
+    "kategori": "Gaming / Action",
+    "versi": "v2.1.0",
+    "ukuran_file": "1.2 GB",
+    "deskripsi_game": "Deskripsi singkat game ini...",
+    "developer": "Nama Dev",
+    "os_minimal": "Android 8.0",
+    "ram_minimal": "4 GB",
+    "total_download": 125000,
+    "linkGoFile": "https://gofile.io/d/xxxxx",
+    "video_url": "https://www.youtube.com/embed/VIDEO_ID",
+    "gambar_logo": "https://example.com/logo-game.png",
     "fitur_mod": [
-      "Unlimited Money & RP",
-      "Semua Kendaraan Terbuka",
-      "Map HD Texture Pack",
-      "60 FPS Unlock (perangkat flagship)",
-      "Cheat Menu Terintegrasi",
-      "No Root Required"
-    ],
-    "linkGoFile": "https://gofile.io/d/link_gta5",
-    "video_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    "tanggal_upload": "2026-06-20",
-    "total_download": 124783,
-    "rating": 4.7
+      "Unlimited Money",
+      "God Mode",
+      "Unlock All Characters"
+    ]
   },
-  "minecraft": {
-    "judul": "Minecraft PE v1.21.0 Full Unlocked APK",
-    "slug": "minecraft-pe-full-unlocked",
-    "kategori": "Sandbox / Survival",
-    "ukuran_file": "856 MB",
-    "versi": "v1.21.0.03",
-    "os_minimal": "Android 5.0 (Lollipop) atau lebih tinggi",
-    "ram_minimal": "2 GB RAM",
-    "developer": "Mojang Studios",
-    "deskripsi_game": "Minecraft Pocket Edition versi terbaru dengan semua fitur premium sudah terbuka. Mainkan mode Survival, Creative, atau multiplayer online dengan teman-teman. Semua skin, texture pack, dan marketplace item tersedia tanpa batas.",
-    "fitur_mod": [
-      "Premium Unlocked",
-      "Semua Skin Gratis",
-      "Texture Pack HD",
-      "Realms Server Access",
-      "Cross-Play Enabled",
-      "No License Verification"
-    ],
-    "linkGoFile": "https://gofile.io/d/link_minecraft",
-    "video_url": "https://www.youtube.com/embed/MmB9b5njVbA",
-    "tanggal_upload": "2026-06-18",
-    "total_download": 89241,
-    "rating": 4.9
-  },
-  "pubgm": {
-    "judul": "PUBG Mobile 3.5 MOD Menu ESP + Aimbot",
-    "slug": "pubg-mobile-mod-menu",
-    "kategori": "Battle Royale / Shooter",
-    "ukuran_file": "2.1 GB",
-    "versi": "v3.5.0 (Season 28)",
-    "os_minimal": "Android 7.0 (Nougat) atau lebih tinggi",
-    "ram_minimal": "3 GB RAM",
-    "developer": "Tencent Games / MOD by KICKLIVE",
-    "deskripsi_game": "PUBG Mobile versi modifikasi dengan menu cheat terintegrasi. Fitur ESP memungkinkan Anda melihat lokasi musuh melalui dinding, sementara aimbot membantu penargetan dengan presisi tinggi. Anti-ban system terbaru untuk keamanan akun.",
-    "fitur_mod": [
-      "ESP Wallhack (Box, Skeleton, Health)",
-      "Aimbot dengan FOV & Smoothness Control",
-      "No Recoil & No Spread",
-      "Speed Hack & Fly Mode",
-      "Auto Headshot 80%",
-      "Anti-Ban System v4.2"
-    ],
-    "linkGoFile": "https://gofile.io/d/link_pubgm",
-    "video_url": "https://www.youtube.com/embed/2QvT07zAH8c",
-    "tanggal_upload": "2026-06-22",
-    "total_download": 156902,
-    "rating": 4.5
+  "game-dua": {
+    "judul": "Game Lain",
+    ...
+    "gambar_logo": "https://example.com/logo-lain.png"
   }
 }
