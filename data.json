@@ -1,26 +1,21 @@
 {
-  "gta5": {
-    "judul": "gta5",
-    "kategori": "Gaming / Action",
-    "versi": "v2.1.0",
-    "ukuran_file": "1.2 GB",
-    "deskripsi_game": "Deskripsi singkat game ini...",
-    "developer": "Nama Dev",
-    "os_minimal": "Android 8.0",
-    "ram_minimal": "4 GB",
-    "total_download": 125000,
-    "linkGoFile": "https://gofile.io/d/xxxxx",
-    "video_url": "https://www.youtube.com/embed/VIDEO_ID",
-    "gambar_logo": "https://example.com/logo-game.png",
-    "fitur_mod": [
-      "Unlimited Money",
-      "God Mode",
-      "Unlock All Characters"
-    ]
-  },
-  "game-dua": {
-    "judul": "Game Lain",
-    ...
-    "gambar_logo": "https://example.com/logo-lain.png"
-  }
+    "gta5": {
+        "judul": "gta5",
+        "kategori": "Gaming / Action",
+        "versi": "v2.1.0",
+        "ukuran_file": "1.2 GB",
+        "deskripsi_game": "Deskripsi singkat game ini...",
+        "developer": "Nama Dev",
+        "os_minimal": "Android 8.0",
+        "ram_minimal": "4 GB",
+        "total_download": 125000,
+        "linkGoFile": "https://gofile.io/d/xxxxx",
+        "video_url": "https://www.youtube.com/embed/VIDEO_ID",
+        "gambar_logo": "https://example.com/logo-game.png",
+        "fitur_mod": [
+            "Unlimited Money",
+            "God Mode",
+            "Unlock All Characters"
+        ]
+    }
 }
