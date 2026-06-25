@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KICKLIVE - Portal Teknologi, Gadget & Komunitas Gaming</title>
+    <meta name="description" content="KICKLIVE adalah portal teknologi dan komunitas gaming yang menyajikan panduan optimalisasi perangkat, analisis keamanan siber, dan tren industri gaming terkini.">
+    <!-- Adsterra Popunder -->
+    <script src="https://pl29887779.effectivecpmnetwork.com/e4/1b/41/e41b41126d650d9a27878dbeb5315713.js"></script>
+    <!-- Adsterra Social Bar -->
+    <script src="https://pl29887778.effectivecpmnetwork.com/6e/28/35/6e2835eb66e7b47f4448bb555dde2ada.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        dark: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+        .article-body p { margin-bottom: 1.5rem; line-height: 1.85; }
+        .article-body h2 { margin-top: 3rem; margin-bottom: 1.25rem; }
+        .article-body h3 { margin-top: 2rem; margin-bottom: 1rem; }
+
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+        .shimmer {
+            background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+            background-size: 1000px 100%;
+            animation: shimmer 2s infinite linear;
+        }
+
+        .native-ad-slot {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 2px dashed #334155;
+        }
+
+        /* Ad slot placeholder styling */
+        .ad-banner-slot {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px dashed #475569;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ad-banner-slot-sm {
+            min-height: 60px;
+        }
+    </style>
+</head>
+<body class="bg-dark-950 text-slate-300 font-sans antialiased">
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="/" class="flex items-center gap-3 flex-shrink-0">
+                    <img src="logo.png" alt="KICKLIVE Logo" class="h-10 w-auto object-contain">
+                </a>
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Beranda</a>
+                    <a href="#" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Teknologi</a>
+                    <a href="#" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Gaming</a>
+                    <a href="#" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Gadget</a>
+                    <a href="#" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Komunitas</a>
+                </nav>
+                <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-400 hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-dark-800 border-t border-slate-800">
+            <div class="px-4 py-3 space-y-2">
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-700 hover:text-white">Beranda</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-700 hover:text-white">Teknologi</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-700 hover:text-white">Gaming</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-700 hover:text-white">Gadget</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-700 hover:text-white">Komunitas</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 text-xs text-slate-500 mb-6">
+            <a href="/" class="hover:text-brand-500 transition-colors">Beranda</a>
+            <span>/</span>
+            <a href="#" class="hover:text-brand-500 transition-colors" id="breadcrumbCategory">Gaming</a>
+            <span>/</span>
+            <span class="text-slate-400 truncate max-w-[200px]" id="breadcrumbTitle">Artikel</span>
+        </nav>
+
+        <!-- ==================== SLOT IKLAN BANNER ATAS ==================== -->
+        <div class="w-full flex justify-center mb-6">
+            <!-- Banner 300x250 -->
+            <script>
+              atOptions = {
+                'key' : '90b8ced68ab1ce3c983fa393b5141acb',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+              };
+            </script>
+            <script src="https://www.highperformanceformat.com/90b8ced68ab1ce3c983fa393b5141acb/invoke.js"></script>
+        </div>
+        <!-- ================================================================ -->
+
+        <!-- ==================== DOWNLOAD GUIDE AREA (ABOVE THE FOLD) ==================== -->
+        <section id="downloadArea" class="bg-dark-800/50 border border-slate-700/50 rounded-2xl p-6 sm:p-8 mb-10">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-1 h-8 bg-brand-500 rounded-full"></div>
+                <h2 class="text-xl sm:text-2xl font-bold text-white">Panduan Mengunduh</h2>
+            </div>
+
+            <!-- Video Player Container (YouTube Embed) -->
+            <div class="relative w-full max-w-2xl mx-auto mb-8">
+                <div id="videoContainer" class="aspect-video rounded-xl overflow-hidden bg-dark-900 border border-slate-700/50">
+                    <!-- Video iframe akan di-inject oleh JavaScript dari data.json -->
+                    <div id="videoPlaceholder" class="w-full h-full shimmer flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="w-16 h-16 mx-auto mb-3 rounded-full bg-slate-700/50 flex items-center justify-center">
+                                <svg class="w-8 h-8 text-slate-500" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </div>
+                            <p class="text-sm font-medium text-slate-400">Video Preview Gameplay</p>
+                            <p class="text-xs text-slate-600 mt-1">Memuat video...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== SLOT IKLAN BANNER DI ATAS DOWNLOAD ==================== -->
+            <div class="flex justify-center gap-4 mb-6 flex-wrap">
+                <!-- Banner 160x300 kiri -->
+                <div>
+                    <script>
+                      atOptions = {
+                        'key' : '7ef34204b1387e450712372aa4083223',
+                        'format' : 'iframe',
+                        'height' : 300,
+                        'width' : 160,
+                        'params' : {}
+                      };
+                    </script>
+                    <script src="https://www.highperformanceformat.com/7ef34204b1387e450712372aa4083223/invoke.js"></script>
+                </div>
+                <!-- Banner 160x600 kanan -->
+                <div>
+                    <script>
+                      atOptions = {
+                        'key' : '666efc25a783cf52a159dafec9aef351',
+                        'format' : 'iframe',
+                        'height' : 600,
+                        'width' : 160,
+                        'params' : {}
+                      };
+                    </script>
+                    <script src="https://www.highperformanceformat.com/666efc25a783cf52a159dafec9aef351/invoke.js"></script>
+                </div>
+            </div>
+            <!-- ============================================================================ -->
+
+            <!-- Download Info -->
+            <div class="bg-dark-900/60 border border-slate-700/30 rounded-xl p-4 mb-6 text-center">
+                <p class="text-slate-400 text-sm">Untuk keamanan file, sistem kami akan melakukan verifikasi singkat sebelum unduhan dimulai.</p>
+            </div>
+
+            <!-- Download Button Container -->
+            <div class="text-center" id="downloadButtonContainer">
+                <button id="downloadBtn" class="group relative inline-flex items-center justify-center px-10 py-4 text-lg font-bold text-white bg-gradient-to-r from-brand-600 to-brand-500 rounded-xl shadow-lg shadow-brand-500/20 hover:shadow-brand-500/40 hover:from-brand-500 hover:to-brand-400 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
+                    <svg class="w-6 h-6 mr-3 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                    </svg>
+                    <span id="downloadBtnText">DOWNLOAD SEKARANG</span>
+                </button>
+                <p class="mt-3 text-xs text-slate-500" id="downloadStatus">File aman — Diperiksa oleh sistem keamanan KICKLIVE</p>
+            </div>
+
+            <!-- Error Message (Hidden by default) -->
+            <div id="errorMessage" class="hidden text-center py-8">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-red-500/10 flex items-center justify-center">
+                    <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-red-400 mb-2">Aset Game/Aplikasi Tidak Ditemukan atau Telah Kedaluwarsa</h3>
+                <p class="text-sm text-slate-400">Silakan periksa kembali URL atau hubungi administrator untuk informasi lebih lanjut.</p>
+            </div>
+        </section>
+
+        <!-- ==================== GAME INFO CARD ==================== -->
+        <section id="gameInfoCard" class="bg-dark-800/50 border border-slate-700/50 rounded-2xl p-6 sm:p-8 mb-10">
+            <div class="flex flex-col lg:flex-row gap-6">
+                <!-- Game Thumbnail -->
+                <div class="flex-shrink-0 w-full lg:w-48">
+                    <div id="gameThumbnail" class="aspect-[3/4] rounded-xl bg-gradient-to-br from-slate-700 to-slate-800 border border-slate-600/30 flex items-center justify-center overflow-hidden">
+                        <svg id="gameThumbnailPlaceholder" class="w-12 h-12 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        <img id="gameThumbnailImg" src="" alt="Game Logo" class="hidden w-full h-full object-cover rounded-xl">
+                    </div>
+                </div>
+                <!-- Game Details -->
+                <div class="flex-1 min-w-0">
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span id="badgeCategory" class="px-3 py-1 text-xs font-semibold bg-brand-500/10 text-brand-400 rounded-full border border-brand-500/20">Gaming</span>
+                        <span id="badgeVersion" class="px-3 py-1 text-xs font-semibold bg-purple-500/10 text-purple-400 rounded-full border border-purple-500/20">v1.0.0</span>
+                        <span id="badgeSize" class="px-3 py-1 text-xs font-semibold bg-emerald-500/10 text-emerald-400 rounded-full border border-emerald-500/20">0 MB</span>
+                    </div>
+                    <h1 id="articleTitle" class="text-2xl sm:text-3xl font-black text-white leading-tight mb-3 font-sans">
+                        Memuat data game...
+                    </h1>
+                    <p id="gameDescription" class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Deskripsi game akan dimuat dari data.json.
+                    </p>
+                    <!-- Meta Grid -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                        <div class="bg-dark-900/60 rounded-lg p-3 border border-slate-700/30">
+                            <p class="text-slate-500 mb-1">Developer</p>
+                            <p id="metaDeveloper" class="text-slate-300 font-medium truncate">-</p>
+                        </div>
+                        <div class="bg-dark-900/60 rounded-lg p-3 border border-slate-700/30">
+                            <p class="text-slate-500 mb-1">OS Minimal</p>
+                            <p id="metaOS" class="text-slate-300 font-medium truncate">-</p>
+                        </div>
+                        <div class="bg-dark-900/60 rounded-lg p-3 border border-slate-700/30">
+                            <p class="text-slate-500 mb-1">RAM Minimal</p>
+                            <p id="metaRAM" class="text-slate-300 font-medium truncate">-</p>
+                        </div>
+                        <div class="bg-dark-900/60 rounded-lg p-3 border border-slate-700/30">
+                            <p class="text-slate-500 mb-1">Total Download</p>
+                            <p id="metaDownloads" class="text-slate-300 font-medium truncate">-</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fitur MOD Box -->
+            <div id="fiturModBox" class="mt-6 bg-gradient-to-r from-amber-500/5 to-orange-500/5 border border-amber-500/20 rounded-xl p-5 hidden">
+                <div class="flex items-center gap-2 mb-3">
+                    <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                    <h3 class="text-base font-bold text-amber-400">Fitur MOD</h3>
+                </div>
+                <ul id="fiturModList" class="grid sm:grid-cols-2 gap-2 text-sm text-slate-300">
+                    <!-- Diisi oleh JavaScript dari data.json -->
+                </ul>
+            </div>
+        </section>
+
+        <!-- ==================== SLOT IKLAN BANNER DI TENGAH KONTEN ==================== -->
+        <div class="w-full flex justify-center mb-10">
+            <script>
+              atOptions = {
+                'key' : '90b8ced68ab1ce3c983fa393b5141acb',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+              };
+            </script>
+            <script src="https://www.highperformanceformat.com/90b8ced68ab1ce3c983fa393b5141acb/invoke.js"></script>
+        </div>
+        <!-- ========================================================================== -->
+
+        <!-- ==================== ARTICLE SEO CONTENT (DIMUAT DINAMIS) ==================== -->
+        <article id="konten-artikel-seo" class="article-body">
+            <!-- Artikel SEO akan dimuat dari artikel.html via Fetch API -->
+            <div class="flex items-center justify-center py-20">
+                <div class="text-center">
+                    <div class="w-10 h-10 border-2 border-brand-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+                    <p class="text-sm text-slate-500">Memuat artikel...</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- ==================== SLOT IKLAN BANNER DI BAWAH ARTIKEL ==================== -->
+        <div class="w-full flex justify-center mt-10 mb-10">
+            <script>
+              atOptions = {
+                'key' : '90b8ced68ab1ce3c983fa393b5141acb',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+              };
+            </script>
+            <script src="https://www.highperformanceformat.com/90b8ced68ab1ce3c983fa393b5141acb/invoke.js"></script>
+        </div>
+        <!-- ========================================================================== -->
+
+        <!-- Article Footer -->
+        <div class="mt-12 pt-8 border-t border-slate-800">
+            <div class="flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-brand-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg">KL</div>
+                    <div>
+                        <p class="font-semibold text-white">Tim Editorial KICKLIVE</p>
+                        <p class="text-sm text-slate-500">Portal Teknologi, Gadget & Komunitas Gaming</p>
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <button class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-sm font-medium hover:bg-slate-700 transition-colors">Bagikan</button>
+                    <button class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-sm font-medium hover:bg-slate-700 transition-colors">Simpan</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Articles Section -->
+        <section class="mt-16 pt-10 border-t border-slate-800">
+            <h2 class="text-xl font-bold text-white mb-6">Artikel Terkait</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <article class="group bg-dark-800/40 border border-slate-700/30 rounded-xl overflow-hidden hover:border-brand-500/30 transition-colors">
+                    <div class="aspect-[16/10] bg-slate-800"></div>
+                    <div class="p-4">
+                        <span class="text-xs font-semibold text-brand-400">Teknologi</span>
+                        <h3 class="mt-2 font-semibold text-white group-hover:text-brand-400 transition-colors">Benchmark SoC Mobile 2026: Snapdragon vs Dimensity vs Exynos</h3>
+                    </div>
+                </article>
+                <article class="group bg-dark-800/40 border border-slate-700/30 rounded-xl overflow-hidden hover:border-brand-500/30 transition-colors">
+                    <div class="aspect-[16/10] bg-slate-800"></div>
+                    <div class="p-4">
+                        <span class="text-xs font-semibold text-purple-400">Keamanan</span>
+                        <h3 class="mt-2 font-semibold text-white group-hover:text-brand-400 transition-colors">Panduan Lengkap Enkripsi End-to-End pada Perangkat Android</h3>
+                    </div>
+                </article>
+                <article class="group bg-dark-800/40 border border-slate-700/30 rounded-xl overflow-hidden hover:border-brand-500/30 transition-colors">
+                    <div class="aspect-[16/10] bg-slate-800"></div>
+                    <div class="p-4">
+                        <span class="text-xs font-semibold text-emerald-400">Gaming</span>
+                        <h3 class="mt-2 font-semibold text-white group-hover:text-brand-400 transition-colors">Analisis Teknis Engine Unreal Engine 5.4 pada Platform Mobile</h3>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-dark-900 border-t border-slate-800 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <img src="logo.png" alt="KICKLIVE" class="h-8 w-auto object-contain mb-4">
+                    <p class="text-sm text-slate-400 max-w-sm leading-relaxed">
+                        KICKLIVE adalah portal teknologi independen yang menyajikan analisis mendalam, panduan optimalisasi perangkat, dan liputan tren industri gaming untuk komunitas teknologi Indonesia dan global.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Kategori</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Teknologi</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Gaming</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Gadget</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Keamanan Siber</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Syarat dan Ketentuan</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Disclaimer</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition-colors">Kontak</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-xs text-slate-500"> KICKLIVE. Seluruh hak cipta dilindungi undang-undang.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-slate-500 hover:text-white transition-colors"><span class="sr-only">Twitter</span><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                    <a href="#" class="text-slate-500 hover:text-white transition-colors"><span class="sr-only">YouTube</span><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+    <script>
+        /**
+         * ============================================================
+         * KICKLIVE - KONFIGURASI DAN LOGIKA UTAMA (REFACTORED)
+         * ============================================================
+         *
+         * INSTRUKSI KONFIGURASI:
+         * 1. Pastikan file 'data.json' dan 'artikel.html' berada di
+         *    direktori yang sama dengan index.html
+         * 2. Ganti 'logo.png' dengan logo website Anda
+         * 3. Sesuaikan URL_SMART_LINK dengan link iklan Smart Link Anda
+         * 4. Sesuaikan URL_DIRECT_LINK jika ingin menambahkan Direct Link
+         *    iklan sebelum redirect ke file asli
+         *
+         * ============================================================
+         */
+
+        // ==================== KONFIGURASI ====================
+
+        /**
+         * URL Smart Link Iklan — GANTI INI dengan URL iklan Smart Link Anda.
+         * Link ini akan terbuka di tab baru pada klik pertama tombol download.
+         */
+        const URL_SMART_LINK = 'https://www.effectivecpmnetwork.com/dx5egd6h?key=7cd5fc81789226deef1669f9bb8e6bf0';
+
+        /**
+         * [OPSIONAL] URL Direct Link Iklan — Jika Anda menggunakan Direct Link
+         * (bukan Smart Link), ganti URL ini. Tombol download akan langsung
+         * mengarahkan ke link ini pada klik kedua.
+         * Jika kosong (''), tombol akan mengarah ke linkGoFile dari data.json.
+         */
+        const URL_DIRECT_LINK = '';
+
+        /**
+         * Path ke file data.json — Sesuaikan jika file berada di subdirektori.
+         */
+        const DATA_JSON_PATH = 'data.json';
+
+        /**
+         * Path ke file artikel.html — Sesuaikan jika file berada di subdirektori.
+         */
+        const ARTIKEL_HTML_PATH = 'artikel.html';
+
+        // ==================== STATE VARIABLES ====================
+
+        let isFirstClick = true;
+        let actualDownloadUrl = '';
+        let gameData = null;
+
+        // ==================== DOM REFERENCES ====================
+        const downloadBtn = document.getElementById('downloadBtn');
+        const downloadBtnText = document.getElementById('downloadBtnText');
+        const downloadStatus = document.getElementById('downloadStatus');
+        const articleTitle = document.getElementById('articleTitle');
+        const breadcrumbTitle = document.getElementById('breadcrumbTitle');
+        const breadcrumbCategory = document.getElementById('breadcrumbCategory');
+        const errorMessage = document.getElementById('errorMessage');
+        const downloadButtonContainer = document.getElementById('downloadButtonContainer');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const videoContainer = document.getElementById('videoContainer');
+        const videoPlaceholder = document.getElementById('videoPlaceholder');
+        const kontenArtikel = document.getElementById('konten-artikel-seo');
+        const gameDescription = document.getElementById('gameDescription');
+        const badgeCategory = document.getElementById('badgeCategory');
+        const badgeVersion = document.getElementById('badgeVersion');
+        const badgeSize = document.getElementById('badgeSize');
+        const metaDeveloper = document.getElementById('metaDeveloper');
+        const metaOS = document.getElementById('metaOS');
+        const metaRAM = document.getElementById('metaRAM');
+        const metaDownloads = document.getElementById('metaDownloads');
+        const fiturModBox = document.getElementById('fiturModBox');
+        const fiturModList = document.getElementById('fiturModList');
+
+        // ==================== UTILITY FUNCTIONS ====================
+
+        function getUrlParam(paramName) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(paramName);
+        }
+
+        function showError() {
+            downloadButtonContainer.classList.add('hidden');
+            errorMessage.classList.remove('hidden');
+            downloadBtn.disabled = true;
+            // Sembunyikan juga game info card
+            document.getElementById('gameInfoCard').classList.add('hidden');
+        }
+
+        function formatNumber(num) {
+            if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+            if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
+            return num.toString();
+        }
+
+        // ==================== RENDER GAME INFO ====================
+
+        function renderGameInfo(data) {
+            gameData = data;
+
+            // Update title & breadcrumb
+            if (data.judul) {
+                articleTitle.textContent = data.judul;
+                breadcrumbTitle.textContent = data.judul.length > 40 ? data.judul.substring(0, 40) + '...' : data.judul;
+                document.title = data.judul + ' — KICKLIVE';
+            }
+
+            // Update badges
+            if (data.kategori) badgeCategory.textContent = data.kategori;
+            if (data.versi) badgeVersion.textContent = data.versi;
+            if (data.ukuran_file) badgeSize.textContent = data.ukuran_file;
+
+            // Update description
+            if (data.deskripsi_game) gameDescription.textContent = data.deskripsi_game;
+
+            // Update meta grid
+            if (data.developer) metaDeveloper.textContent = data.developer;
+            if (data.os_minimal) metaOS.textContent = data.os_minimal;
+            if (data.ram_minimal) metaRAM.textContent = data.ram_minimal;
+            if (data.total_download) metaDownloads.textContent = formatNumber(data.total_download);
+
+            // Update breadcrumb category
+            if (data.kategori) {
+                breadcrumbCategory.textContent = data.kategori.split('/')[0].trim();
+            }
+
+            // Render Fitur MOD box
+            if (data.fitur_mod && Array.isArray(data.fitur_mod) && data.fitur_mod.length > 0) {
+                fiturModBox.classList.remove('hidden');
+                fiturModList.innerHTML = data.fitur_mod.map(feature =>
+                    `<li class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        <span>${feature}</span>
+                    </li>`
+                ).join('');
+            }
+
+            // Render gambar logo game
+            if (data.gambar_logo) {
+                const img = document.getElementById('gameThumbnailImg');
+                const placeholder = document.getElementById('gameThumbnailPlaceholder');
+                img.src = data.gambar_logo;
+                img.onload = function() {
+                    img.classList.remove('hidden');
+                    placeholder.classList.add('hidden');
+                };
+            }
+
+            // Render video player
+            if (data.video_url) {
+                videoContainer.innerHTML = `<iframe
+                    src="${data.video_url}"
+                    title="Video Preview"
+                    class="w-full h-full"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>`;
+            }
+
+            // Set download URL
+            actualDownloadUrl = data.linkGoFile || '';
+
+            // Jika linkGoFile kosong, nonaktifkan tombol
+            if (!actualDownloadUrl) {
+                downloadBtn.disabled = true;
+                downloadBtnText.textContent = 'LINK TIDAK TERSEDIA';
+                downloadStatus.textContent = 'Link unduhan untuk aset ini belum dikonfigurasi.';
+            }
+        }
+
+        // ==================== FETCH DATA GAME ====================
+
+        async function loadDownloadData() {
+            const id = getUrlParam('id');
+
+            if (!id) {
+                showError();
+                return;
+            }
+
+            try {
+                const response = await fetch(DATA_JSON_PATH);
+
+                if (!response.ok) {
+                    throw new Error('Gagal memuat data.json: HTTP ' + response.status);
+                }
+
+                const data = await response.json();
+
+                if (data && data[id]) {
+                    renderGameInfo(data[id]);
+                } else {
+                    throw new Error('ID tidak ditemukan dalam database');
+                }
+
+            } catch (error) {
+                console.error('KICKLIVE Error:', error);
+                showError();
+            }
+        }
+
+        // ==================== FETCH ARTIKEL SEO ====================
+
+        async function loadArticleContent() {
+            try {
+                const response = await fetch(ARTIKEL_HTML_PATH);
+
+                if (!response.ok) {
+                    throw new Error('Gagal memuat artikel.html: HTTP ' + response.status);
+                }
+
+                const htmlContent = await response.text();
+                kontenArtikel.innerHTML = htmlContent;
+
+            } catch (error) {
+                console.error('KICKLIVE Artikel Error:', error);
+                kontenArtikel.innerHTML = `
+                    <div class="text-center py-10">
+                        <p class="text-slate-500">Gagal memuat artikel. Silakan muat ulang halaman.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // ==================== DOWNLOAD BUTTON LOGIC (COOLDOWN 8 DETIK) ====================
+
+        let countdownInterval = null;
+
+        downloadBtn.addEventListener('click', function() {
+            if (downloadBtn.disabled) return;
+
+            if (isFirstClick) {
+                // ========== TAHAP 1: KLIK PERTAMA — buka smart link + mulai countdown ==========
+                window.open(URL_SMART_LINK, '_blank');
+
+                isFirstClick = false;
+                downloadBtn.disabled = true;
+
+                let seconds = 8;
+                downloadBtnText.textContent = `Mohon tunggu... (${seconds}s)`;
+                downloadStatus.textContent = 'Sistem sedang memverifikasi file Anda. Tombol aktif dalam beberapa detik.';
+                downloadStatus.classList.remove('text-slate-500');
+                downloadStatus.classList.add('text-brand-400', 'font-medium');
+
+                countdownInterval = setInterval(function() {
+                    seconds--;
+                    if (seconds > 0) {
+                        downloadBtnText.textContent = `Mohon tunggu... (${seconds}s)`;
+                    } else {
+                        clearInterval(countdownInterval);
+                        downloadBtn.disabled = false;
+                        downloadBtnText.textContent = 'AMBIL FILE SEKARANG';
+                        downloadStatus.textContent = 'Verifikasi selesai! Klik tombol untuk mengunduh.';
+                        downloadBtn.classList.remove('from-brand-600', 'to-brand-500');
+                        downloadBtn.classList.add('from-emerald-600', 'to-emerald-500', 'shadow-emerald-500/20');
+                    }
+                }, 1000);
+
+            } else {
+                // ========== TAHAP 2: KLIK KEDUA — redirect ke file ==========
+                const targetUrl = URL_DIRECT_LINK || actualDownloadUrl;
+                if (targetUrl) {
+                    window.location.href = targetUrl;
+                }
+            }
+        });
+
+        // ==================== MOBILE MENU TOGGLE ====================
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // ==================== INITIALIZATION ====================
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Muat data game dan artikel secara paralel
+            loadDownloadData();
+            loadArticleContent();
+        });
+    </script>
+</body>
+</html>
