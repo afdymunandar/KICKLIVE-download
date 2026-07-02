@@ -60,6 +60,11 @@
 
   #progressPopup { animation: popIn .25s ease; }
   @keyframes popIn { from { opacity:0; transform: scale(.95); } to { opacity:1; transform: scale(1); } }
+
+  /* Banner tetap dimuat browser seperti biasa (compatible document.write),
+     tapi disembunyikan secara VISUAL selama 3 detik pertama */
+  .ad-delay-wrap { visibility: hidden; height: 0; min-height: 0 !important; overflow: hidden; }
+  .ad-delay-wrap.ad-revealed { visibility: visible; height: auto; }
 </style>
 </head>
 <body class="bg-dark-950 text-slate-300 font-sans antialiased">
@@ -129,7 +134,10 @@
   </div>
 
   <!-- ad-slot di atas tombol -->
-  <div class="ad-slot ad-slot-300x250 mx-auto mb-6" id="ad-slot-top"></div>
+  <div class="ad-slot ad-slot-300x250 ad-delay-wrap mx-auto mb-6" id="ad-slot-top">
+    <script>atOptions = {'key':'90b8ced68ab1ce3c983fa393b5141acb','format':'iframe','height':250,'width':300,'params':{}};</script>
+    <script src="https://www.highperformanceformat.com/90b8ced68ab1ce3c983fa393b5141acb/invoke.js"></script>
+  </div>
 
   <!-- ==================== TOMBOL LANJUT KE TAHAP 2 ==================== -->
   <div class="text-center mb-10" id="ctaBox">
@@ -140,50 +148,63 @@
     <p class="mt-3 text-xs text-amber-400 font-medium">⚠️ 2 langkah lagi sebelum link download muncul (tutorial &amp; verifikasi)</p>
   </div>
 
-  <!-- ==================== BANNER ADS ==================== -->
+  <!-- ==================== BANNER ADS (script langsung, disembunyikan visual 3 detik) ==================== -->
   <div class="ad-row">
-    <div class="ad-slot ad-slot-300x250" id="ad-slot-300-1"></div>
-    <div class="ad-slot ad-slot-300x250" id="ad-slot-300-2"></div>
+    <div class="ad-slot ad-slot-300x250 ad-delay-wrap" id="ad-slot-300-1">
+      <script>atOptions = {'key':'90b8ced68ab1ce3c983fa393b5141acb','format':'iframe','height':250,'width':300,'params':{}};</script>
+      <script src="https://www.highperformanceformat.com/90b8ced68ab1ce3c983fa393b5141acb/invoke.js"></script>
+    </div>
+    <div class="ad-slot ad-slot-300x250 ad-delay-wrap" id="ad-slot-300-2">
+      <script>atOptions = {'key':'90b8ced68ab1ce3c983fa393b5141acb','format':'iframe','height':250,'width':300,'params':{}};</script>
+      <script src="https://www.highperformanceformat.com/90b8ced68ab1ce3c983fa393b5141acb/invoke.js"></script>
+    </div>
   </div>
   <div class="ad-row">
-    <div class="ad-slot ad-slot-160x300" id="ad-slot-160-1"></div>
-    <div class="ad-slot ad-slot-160x300" id="ad-slot-160-2"></div>
-    <div class="ad-slot ad-slot-160x300" id="ad-slot-160-3"></div>
-    <div class="ad-slot ad-slot-160x300" id="ad-slot-160-4"></div>
+    <div class="ad-slot ad-slot-160x300 ad-delay-wrap" id="ad-slot-160-1">
+      <script>atOptions = {'key':'7ef34204b1387e450712372aa4083223','format':'iframe','height':300,'width':160,'params':{}};</script>
+      <script src="https://www.highperformanceformat.com/7ef34204b1387e450712372aa4083223/invoke.js"></script>
+    </div>
+    <div class="ad-slot ad-slot-160x300 ad-delay-wrap" id="ad-slot-160-2">
+      <script>atOptions = {'key':'7ef34204b1387e450712372aa4083223','format':'iframe','height':300,'width':160,'params':{}};</script>
+      <script src="https://www.highperformanceformat.com/7ef34204b1387e450712372aa4083223/invoke.js"></script>
+    </div>
+    <div class="ad-slot ad-slot-160x300 ad-delay-wrap" id="ad-slot-160-3">
+      <script>atOptions = {'key':'7ef34204b1387e450712372aa4083223','format':'iframe','height':300,'width':160,'params':{}};</script>
+      <script src="https://www.highperformanceformat.com/7ef34204b1387e450712372aa4083223/invoke.js"></script>
+    </div>
+    <div class="ad-slot ad-slot-160x300 ad-delay-wrap" id="ad-slot-160-4">
+      <script>atOptions = {'key':'7ef34204b1387e450712372aa4083223','format':'iframe','height':300,'width':160,'params':{}};</script>
+      <script src="https://www.highperformanceformat.com/7ef34204b1387e450712372aa4083223/invoke.js"></script>
+    </div>
   </div>
   <div class="ad-row">
-    <div class="ad-slot ad-slot-160x600" id="ad-slot-600-1"></div>
-    <div class="ad-slot ad-slot-160x600" id="ad-slot-600-2"></div>
+    <div class="ad-slot ad-slot-160x600 ad-delay-wrap" id="ad-slot-600-1">
+      <script>atOptions = {'key':'666efc25a783cf52a159dafec9aef351','format':'iframe','height':600,'width':160,'params':{}};</script>
+      <script src="https://www.highperformanceformat.com/666efc25a783cf52a159dafec9aef351/invoke.js"></script>
+    </div>
+    <div class="ad-slot ad-slot-160x600 ad-delay-wrap" id="ad-slot-600-2">
+      <script>atOptions = {'key':'666efc25a783cf52a159dafec9aef351','format':'iframe','height':600,'width':160,'params':{}};</script>
+      <script src="https://www.highperformanceformat.com/666efc25a783cf52a159dafec9aef351/invoke.js"></script>
+    </div>
   </div>
 
-  <!-- ==================== INFO TAMBAHAN (dimuat langsung di index) ==================== -->
-  <section class="mt-4 border-t border-slate-800 pt-8" id="moreInfoSection">
-    <h2 class="text-lg font-bold text-white mb-4">Informasi Lainnya</h2>
-    <div class="space-y-3" id="accordionList">
-      <div class="border border-slate-700/50 rounded-xl overflow-hidden bg-dark-800/40">
-        <button class="acc-toggle w-full flex items-center justify-between px-4 py-3 text-left text-sm font-semibold text-white" data-src="artikel.html" data-target="acc-artikel">
-          Artikel <svg class="w-4 h-4 acc-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-        </button>
-        <div id="acc-artikel" class="hidden px-4 pb-4 text-sm text-slate-400 leading-relaxed article-body"></div>
-      </div>
-      <div class="border border-slate-700/50 rounded-xl overflow-hidden bg-dark-800/40">
-        <button class="acc-toggle w-full flex items-center justify-between px-4 py-3 text-left text-sm font-semibold text-white" data-src="about.html" data-target="acc-about">
-          Tentang Kami <svg class="w-4 h-4 acc-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-        </button>
-        <div id="acc-about" class="hidden px-4 pb-4 text-sm text-slate-400 leading-relaxed"></div>
-      </div>
-      <div class="border border-slate-700/50 rounded-xl overflow-hidden bg-dark-800/40">
-        <button class="acc-toggle w-full flex items-center justify-between px-4 py-3 text-left text-sm font-semibold text-white" data-src="contact.html" data-target="acc-contact">
-          Kontak <svg class="w-4 h-4 acc-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-        </button>
-        <div id="acc-contact" class="hidden px-4 pb-4 text-sm text-slate-400 leading-relaxed"></div>
-      </div>
-      <div class="border border-slate-700/50 rounded-xl overflow-hidden bg-dark-800/40">
-        <button class="acc-toggle w-full flex items-center justify-between px-4 py-3 text-left text-sm font-semibold text-white" data-src="privacy-policy.html" data-target="acc-privacy">
-          Kebijakan Privasi <svg class="w-4 h-4 acc-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-        </button>
-        <div id="acc-privacy" class="hidden px-4 pb-4 text-sm text-slate-400 leading-relaxed"></div>
-      </div>
+  <!-- ==================== INFO TAMBAHAN (langsung tampil, bukan accordion) ==================== -->
+  <section class="mt-4 border-t border-slate-800 pt-8 space-y-8" id="moreInfoSection">
+    <div id="acc-artikel" class="article-body text-sm text-slate-400 leading-relaxed">
+      <h2 class="text-lg font-bold text-white mb-3">Artikel</h2>
+      <p class="text-slate-500 text-xs">Memuat...</p>
+    </div>
+    <div id="acc-about" class="text-sm text-slate-400 leading-relaxed">
+      <h2 class="text-lg font-bold text-white mb-3">Tentang Kami</h2>
+      <p class="text-slate-500 text-xs">Memuat...</p>
+    </div>
+    <div id="acc-contact" class="text-sm text-slate-400 leading-relaxed">
+      <h2 class="text-lg font-bold text-white mb-3">Kontak</h2>
+      <p class="text-slate-500 text-xs">Memuat...</p>
+    </div>
+    <div id="acc-privacy" class="text-sm text-slate-400 leading-relaxed">
+      <h2 class="text-lg font-bold text-white mb-3">Kebijakan Privasi</h2>
+      <p class="text-slate-500 text-xs">Memuat...</p>
     </div>
   </section>
 
@@ -193,10 +214,10 @@
   <div class="max-w-4xl mx-auto px-4 sm:px-6 py-8 text-center">
     <img src="logo.png" alt="KICKLIVE" class="h-8 w-auto object-contain mx-auto mb-3">
     <nav class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-slate-400 mb-3">
-      <a href="#acc-artikel" class="footer-jump hover:text-brand-400 transition-colors" data-target="acc-artikel">Artikel</a>
-      <a href="#acc-about" class="footer-jump hover:text-brand-400 transition-colors" data-target="acc-about">Tentang Kami</a>
-      <a href="#acc-contact" class="footer-jump hover:text-brand-400 transition-colors" data-target="acc-contact">Kontak</a>
-      <a href="#acc-privacy" class="footer-jump hover:text-brand-400 transition-colors" data-target="acc-privacy">Kebijakan Privasi</a>
+      <a href="#acc-artikel" class="footer-jump">Artikel</a>
+      <a href="#acc-about" class="footer-jump">Tentang Kami</a>
+      <a href="#acc-contact" class="footer-jump">Kontak</a>
+      <a href="#acc-privacy" class="footer-jump">Kebijakan Privasi</a>
     </nav>
     <p class="text-xs text-slate-500">&copy; KICKLIVE. Seluruh hak cipta dilindungi undang-undang.</p>
   </div>
@@ -257,50 +278,33 @@
     document.getElementById('progressPopup').classList.add('hidden');
   });
 
-  // ==================== ACCORDION: MUAT KONTEN LANGSUNG DI INDEX ====================
-  const loadedSections = {};
-  document.querySelectorAll('.acc-toggle').forEach(btn => {
-    btn.addEventListener('click', async () => {
-      const targetId = btn.dataset.target;
-      const src = btn.dataset.src;
-      const content = document.getElementById(targetId);
-      const icon = btn.querySelector('.acc-icon');
-      const isHidden = content.classList.contains('hidden');
+  // ==================== ARTIKEL/ABOUT/KONTAK/PRIVASI: LANGSUNG TAMPIL (bukan accordion) ====================
+  async function loadInlineSection(targetId, src, titleFallback){
+    const content = document.getElementById(targetId);
+    try {
+      const res = await fetch(src);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const html = await res.text();
+      // Ambil hanya isi <body> supaya tidak bentrok dengan head/script/style halaman ini
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      doc.body.querySelectorAll('script').forEach(s => s.remove());
+      content.innerHTML = doc.body.innerHTML;
+    } catch (e) {
+      content.innerHTML = '<h2 class="text-lg font-bold text-white mb-3">' + titleFallback + '</h2><p class="text-red-400 text-xs">Gagal memuat konten: ' + e.message + '</p>';
+    }
+  }
+  loadInlineSection('acc-artikel', 'artikel.html', 'Artikel');
+  loadInlineSection('acc-about', 'about.html', 'Tentang Kami');
+  loadInlineSection('acc-contact', 'contact.html', 'Kontak');
+  loadInlineSection('acc-privacy', 'privacy-policy.html', 'Kebijakan Privasi');
 
-      if (isHidden) {
-        content.classList.remove('hidden');
-        icon.style.transform = 'rotate(180deg)';
-        if (!loadedSections[targetId]) {
-          content.innerHTML = '<div class="py-4 text-center text-slate-500 text-xs">Memuat...</div>';
-          try {
-            const res = await fetch(src);
-            if (!res.ok) throw new Error('HTTP ' + res.status);
-            const html = await res.text();
-            // Ambil hanya isi <body> supaya tidak bentrok dengan head/script/style halaman ini
-            const doc = new DOMParser().parseFromString(html, 'text/html');
-            doc.body.querySelectorAll('script').forEach(s => s.remove());
-            content.innerHTML = doc.body.innerHTML;
-            loadedSections[targetId] = true;
-          } catch (e) {
-            content.innerHTML = '<p class="text-red-400 text-xs">Gagal memuat konten: ' + e.message + '</p>';
-          }
-        }
-      } else {
-        content.classList.add('hidden');
-        icon.style.transform = 'rotate(0deg)';
-      }
-    });
-  });
-
-  // Footer link -> scroll & buka accordion terkait
+  // Footer link -> scroll ke section terkait (sudah langsung tampil, tidak perlu diklik dulu)
   document.querySelectorAll('.footer-jump').forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
-      const targetId = link.dataset.target;
+      const targetId = link.getAttribute('href').replace('#','');
       const content = document.getElementById(targetId);
-      const btn = document.querySelector('.acc-toggle[data-target="' + targetId + '"]');
-      if (content.classList.contains('hidden') && btn) btn.click();
-      content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (content) content.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 
@@ -312,32 +316,24 @@
     window.location.href = target;
   });
 
-  // ==================== ADS: BARU AKTIF SETELAH 3 DETIK ====================
-  function injectScript(src, async){
+  // ==================== POPUNDER & SOCIAL BAR: aktif setelah 3 detik ====================
+  // (aman didelay karena berbasis window.open/iframe, bukan document.write)
+  function injectScript(src){
     const s = document.createElement('script');
-    s.src = src; s.async = !!async;
+    s.src = src; s.async = true;
     document.body.appendChild(s);
   }
-  function injectBanner(containerId, key, width, height){
-    const el = document.getElementById(containerId);
-    if(!el) return;
-    const cfg = document.createElement('script');
-    cfg.text = "atOptions = {'key':'" + key + "','format':'iframe','height':" + height + ",'width':" + width + ",'params':{}};";
-    el.appendChild(cfg);
-    const inv = document.createElement('script');
-    inv.src = 'https://www.highperformanceformat.com/' + key + '/invoke.js';
-    el.appendChild(inv);
-  }
-
   setTimeout(() => {
-    // Popunder x2
-    injectScript('https://pl29887779.effectivecpmnetwork.com/e4/1b/41/e41b41126d650d9a27878dbeb5315713.js', true);
-    injectScript('https://pl29887779.effectivecpmnetwork.com/e4/1b/41/e41b41126d650d9a27878dbeb5315713.js', true);
-    // Social bar
-    injectScript('https://pl29887778.effectivecpmnetwork.com/6e/28/35/6e2835eb66e7b47f4448bb555dde2ada.js', true);
-    // Banner ads (staggered biar atOptions tidak bentrok antar slot)
-    injectBanner('ad-slot-top', '90b8ced68ab1ce3c983fa393b5141acb', 300, 250);
+    injectScript('https://pl29887779.effectivecpmnetwork.com/e4/1b/41/e41b41126d650d9a27878dbeb5315713.js');
+    injectScript('https://pl29887779.effectivecpmnetwork.com/e4/1b/41/e41b41126d650d9a27878dbeb5315713.js');
+    injectScript('https://pl29887778.effectivecpmnetwork.com/6e/28/35/6e2835eb66e7b47f4448bb555dde2ada.js');
   }, 3000);
-  setTimeout(() => injectBanner('ad-slot-300-1', '90b8ced68ab1ce3c983fa393b5141acb', 300, 250), 3200);
-  setTimeout(() => injectBanner('ad-slot-300-2', '90b8ced68ab1ce3c983fa393b5141acb', 300, 250), 3400);
-  setTimeout(() => injec
+
+  // ==================== BANNER: script sudah jalan normal dari awal (document.write aman),
+  // hanya disembunyikan SECARA VISUAL sampai 3 detik ====================
+  setTimeout(() => {
+    document.querySelectorAll('.ad-delay-wrap').forEach(el => el.classList.add('ad-revealed'));
+  }, 3000);
+</script>
+</body>
+</html>
