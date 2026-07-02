@@ -156,16 +156,47 @@
     <div class="ad-slot ad-slot-160x600" id="ad-slot-600-2"></div>
   </div>
 
+  <!-- ==================== INFO TAMBAHAN (dimuat langsung di index) ==================== -->
+  <section class="mt-4 border-t border-slate-800 pt-8" id="moreInfoSection">
+    <h2 class="text-lg font-bold text-white mb-4">Informasi Lainnya</h2>
+    <div class="space-y-3" id="accordionList">
+      <div class="border border-slate-700/50 rounded-xl overflow-hidden bg-dark-800/40">
+        <button class="acc-toggle w-full flex items-center justify-between px-4 py-3 text-left text-sm font-semibold text-white" data-src="artikel.html" data-target="acc-artikel">
+          Artikel <svg class="w-4 h-4 acc-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div id="acc-artikel" class="hidden px-4 pb-4 text-sm text-slate-400 leading-relaxed article-body"></div>
+      </div>
+      <div class="border border-slate-700/50 rounded-xl overflow-hidden bg-dark-800/40">
+        <button class="acc-toggle w-full flex items-center justify-between px-4 py-3 text-left text-sm font-semibold text-white" data-src="about.html" data-target="acc-about">
+          Tentang Kami <svg class="w-4 h-4 acc-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div id="acc-about" class="hidden px-4 pb-4 text-sm text-slate-400 leading-relaxed"></div>
+      </div>
+      <div class="border border-slate-700/50 rounded-xl overflow-hidden bg-dark-800/40">
+        <button class="acc-toggle w-full flex items-center justify-between px-4 py-3 text-left text-sm font-semibold text-white" data-src="contact.html" data-target="acc-contact">
+          Kontak <svg class="w-4 h-4 acc-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div id="acc-contact" class="hidden px-4 pb-4 text-sm text-slate-400 leading-relaxed"></div>
+      </div>
+      <div class="border border-slate-700/50 rounded-xl overflow-hidden bg-dark-800/40">
+        <button class="acc-toggle w-full flex items-center justify-between px-4 py-3 text-left text-sm font-semibold text-white" data-src="privacy-policy.html" data-target="acc-privacy">
+          Kebijakan Privasi <svg class="w-4 h-4 acc-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div id="acc-privacy" class="hidden px-4 pb-4 text-sm text-slate-400 leading-relaxed"></div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="bg-dark-900 border-t border-slate-800 mt-16">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 py-8 text-center">
     <img src="logo.png" alt="KICKLIVE" class="h-8 w-auto object-contain mx-auto mb-3">
     <nav class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-slate-400 mb-3">
-      <a href="artikel.html" class="hover:text-brand-400 transition-colors">Artikel</a>
-      <a href="about.html" class="hover:text-brand-400 transition-colors">Tentang Kami</a>
-      <a href="contact.html" class="hover:text-brand-400 transition-colors">Kontak</a>
-      <a href="privacy-policy.html" class="hover:text-brand-400 transition-colors">Kebijakan Privasi</a>
+      <a href="#acc-artikel" class="footer-jump hover:text-brand-400 transition-colors" data-target="acc-artikel">Artikel</a>
+      <a href="#acc-about" class="footer-jump hover:text-brand-400 transition-colors" data-target="acc-about">Tentang Kami</a>
+      <a href="#acc-contact" class="footer-jump hover:text-brand-400 transition-colors" data-target="acc-contact">Kontak</a>
+      <a href="#acc-privacy" class="footer-jump hover:text-brand-400 transition-colors" data-target="acc-privacy">Kebijakan Privasi</a>
     </nav>
     <p class="text-xs text-slate-500">&copy; KICKLIVE. Seluruh hak cipta dilindungi undang-undang.</p>
   </div>
@@ -226,6 +257,53 @@
     document.getElementById('progressPopup').classList.add('hidden');
   });
 
+  // ==================== ACCORDION: MUAT KONTEN LANGSUNG DI INDEX ====================
+  const loadedSections = {};
+  document.querySelectorAll('.acc-toggle').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const targetId = btn.dataset.target;
+      const src = btn.dataset.src;
+      const content = document.getElementById(targetId);
+      const icon = btn.querySelector('.acc-icon');
+      const isHidden = content.classList.contains('hidden');
+
+      if (isHidden) {
+        content.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+        if (!loadedSections[targetId]) {
+          content.innerHTML = '<div class="py-4 text-center text-slate-500 text-xs">Memuat...</div>';
+          try {
+            const res = await fetch(src);
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            const html = await res.text();
+            // Ambil hanya isi <body> supaya tidak bentrok dengan head/script/style halaman ini
+            const doc = new DOMParser().parseFromString(html, 'text/html');
+            doc.body.querySelectorAll('script').forEach(s => s.remove());
+            content.innerHTML = doc.body.innerHTML;
+            loadedSections[targetId] = true;
+          } catch (e) {
+            content.innerHTML = '<p class="text-red-400 text-xs">Gagal memuat konten: ' + e.message + '</p>';
+          }
+        }
+      } else {
+        content.classList.add('hidden');
+        icon.style.transform = 'rotate(0deg)';
+      }
+    });
+  });
+
+  // Footer link -> scroll & buka accordion terkait
+  document.querySelectorAll('.footer-jump').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.dataset.target;
+      const content = document.getElementById(targetId);
+      const btn = document.querySelector('.acc-toggle[data-target="' + targetId + '"]');
+      if (content.classList.contains('hidden') && btn) btn.click();
+      content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
   // ==================== TOMBOL LANJUT -> check.html ====================
   document.getElementById('continueBtn').addEventListener('click', () => {
     const w = window.open(SMART_LINK, '_blank', 'noopener,noreferrer');
@@ -262,12 +340,4 @@
   }, 3000);
   setTimeout(() => injectBanner('ad-slot-300-1', '90b8ced68ab1ce3c983fa393b5141acb', 300, 250), 3200);
   setTimeout(() => injectBanner('ad-slot-300-2', '90b8ced68ab1ce3c983fa393b5141acb', 300, 250), 3400);
-  setTimeout(() => injectBanner('ad-slot-160-1', '7ef34204b1387e450712372aa4083223', 160, 300), 3600);
-  setTimeout(() => injectBanner('ad-slot-160-2', '7ef34204b1387e450712372aa4083223', 160, 300), 3800);
-  setTimeout(() => injectBanner('ad-slot-160-3', '7ef34204b1387e450712372aa4083223', 160, 300), 4000);
-  setTimeout(() => injectBanner('ad-slot-160-4', '7ef34204b1387e450712372aa4083223', 160, 300), 4200);
-  setTimeout(() => injectBanner('ad-slot-600-1', '666efc25a783cf52a159dafec9aef351', 160, 600), 4400);
-  setTimeout(() => injectBanner('ad-slot-600-2', '666efc25a783cf52a159dafec9aef351', 160, 600), 4600);
-</script>
-</body>
-</html>
+  setTimeout(() => injec
