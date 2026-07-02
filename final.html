@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Download - GameDownload</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0f0f0f',
+                        darker: '#1a1a1a',
+                        accent: '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #0f0f0f; color: #e5e5e5; }
+        .ad-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin: 16px 0; }
+        .ad-slot { display: flex; align-items: center; justify-content: center; background: #1a1a1a; border-radius: 8px; border: 1px dashed #333; overflow: hidden; }
+        .ad-placeholder { color: #555; font-size: 12px; text-align: center; padding: 8px; }
+        .banner-hidden { opacity: 0; transform: translateY(20px); transition: all 0.5s ease; }
+        .banner-visible { opacity: 1; transform: translateY(0); }
+
+        .timer-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 4px solid #3b82f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 0 auto;
+            position: relative;
+            color: white;
+        }
+        .timer-circle::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 4px solid transparent;
+            border-top-color: #10b981;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .fade-in { animation: fadeIn 0.5s ease forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-20">
+    <!-- Header -->
+    <header class="bg-darker border-b border-gray-800 sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-accent rounded-lg flex items-center justify-center font-bold text-white text-lg">G</div>
+                <span class="text-xl font-bold text-white">GameDownload</span>
+            </div>
+            <nav class="flex gap-4 text-sm text-gray-400">
+                <a href="index.html" class="hover:text-white transition">Home</a>
+                <a href="#" class="hover:text-white transition">Games</a>
+                <a href="#" class="hover:text-white transition">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Popunder Scripts (auto load) -->
+    <script src="https://adeptdoorstep.com/6e/28/35/6e2835eb66e7b47f4448bb555dde2ada.js"></script>
+    <script src="https://adeptdoorstep.com/e4/1b/41/e41b41126d650d9a27878dbeb5315713.js"></script>
+
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Article TUTORIAL (Generic for all games) -->
+        <article class="bg-darker rounded-xl p-6 mb-8">
+            <h1 class="text-2xl font-bold text-white mb-6">📖 Tutorial Install Game</h1>
+
+            <div class="prose prose-invert max-w-none text-gray-300 leading-relaxed">
+                <p class="mb-4">
+                    Setelah berhasil mendownload file game, ikuti langkah-langkah berikut untuk menginstall game di perangkatmu. Panduan ini berlaku untuk hampir semua game PC modern.
+                </p>
+
+                <h3 class="text-lg font-semibold text-white mt-6 mb-3">Langkah 1: Ekstrak File</h3>
+                <p class="mb-4">
+                    Jika file berformat .zip atau .rar, gunakan WinRAR atau 7-Zip untuk mengekstraknya. Klik kanan pada file → "Extract Here" atau "Extract to [nama folder]". Pastikan ekstrak berhasil tanpa error.
+                </p>
+
+                <!-- Banner 300x250 Container - BISA DIDUPLIKAT -->
+                <div class="ad-container banner-hidden" id="ad-row-300x250">
+                    <div class="ad-slot" style="width:300px;height:250px;">
+                        <script>
+                          atOptions = {
+                            'key' : '90b8ced68ab1ce3c983fa393b5141acb',
+                            'format' : 'iframe',
+                            'height' : 250,
+                            'width' : 300,
+                            'params' : {}
+                          };
+                        </script>
+                        <script src="https://adeptdoorstep.com/90b8ced68ab1ce3c983fa393b5141acb/invoke.js"></script>
+                    </div>
+                    <div class="ad-slot" style="width:300px;height:250px;">
+                        <script>
+                          atOptions = {
+                            'key' : '90b8ced68ab1ce3c983fa393b5141acb',
+                            'format' : 'iframe',
+                            'height' : 250,
+                            'width' : 300,
+                            'params' : {}
+                          };
+                        </script>
+                        <script src="https://adeptdoorstep.com/90b8ced68ab1ce3c983fa393b5141acb/invoke.js"></script>
+                    </div>
+                    <div class="ad-slot" style="width:300px;height:250px;">
+                        <script>
+                          atOptions = {
+                            'key' : '90b8ced68ab1ce3c983fa393b5141acb',
+                            'format' : 'iframe',
+                            'height' : 250,
+                            'width' : 300,
+                            'params' : {}
+                          };
+                        </script>
+                        <script src="https://adeptdoorstep.com/90b8ced68ab1ce3c983fa393b5141acb/invoke.js"></script>
+                    </div>
+                </div>
+
+                <h3 class="text-lg font-semibold text-white mt-6 mb-3">Langkah 2: Jalankan Setup</h3>
+                <p class="mb-4">
+                    Cari file setup.exe atau install.exe di folder hasil ekstrak. Klik dua kali untuk menjalankan proses instalasi. Ikuti instruksi yang muncul di layar dengan cermat.
+                </p>
+
+                <!-- Banner 160x300 Container - BISA DIDUPLIKAT -->
+                <div class="ad-container banner-hidden" id="ad-row-160x300">
+                    <div class="ad-slot" style="width:160px;height:300px;">
+                        <script>
+                          atOptions = {
+                            'key' : '7ef34204b1387e450712372aa4083223',
+                            'format' : 'iframe',
+                            'height' : 300,
+                            'width' : 160,
+                            'params' : {}
+                          };
+                        </script>
+                        <script src="https://adeptdoorstep.com/7ef34204b1387e450712372aa4083223/invoke.js"></script>
+                    </div>
+                    <div class="ad-slot" style="width:160px;height:300px;">
+                        <script>
+                          atOptions = {
+                            'key' : '7ef34204b1387e450712372aa4083223',
+                            'format' : 'iframe',
+                            'height' : 300,
+                            'width' : 160,
+                            'params' : {}
+                          };
+                        </script>
+                        <script src="https://adeptdoorstep.com/7ef34204b1387e450712372aa4083223/invoke.js"></script>
+                    </div>
+                    <div class="ad-slot" style="width:160px;height:300px;">
+                        <script>
+                          atOptions = {
+                            'key' : '7ef34204b1387e450712372aa4083223',
+                            'format' : 'iframe',
+                            'height' : 300,
+                            'width' : 160,
+                            'params' : {}
+                          };
+                        </script>
+                        <script src="https://adeptdoorstep.com/7ef34204b1387e450712372aa4083223/invoke.js"></script>
+                    </div>
+                    <div class="ad-slot" style="width:160px;height:300px;">
+                        <script>
+                          atOptions = {
+                            'key' : '7ef34204b1387e450712372aa4083223',
+                            'format' : 'iframe',
+                            'height' : 300,
+                            'width' : 160,
+                            'params' : {}
+                          };
+                        </script>
+                        <script src="https://adeptdoorstep.com/7ef34204b1387e450712372aa4083223/invoke.js"></script>
+                    </div>
+                </div>
+
+                <h3 class="text-lg font-semibold text-white mt-6 mb-3">Langkah 3: Pilih Lokasi Install</h3>
+                <p class="mb-4">
+                    Pilih folder tujuan instalasi. Direkomendasikan menggunakan drive selain C: (sistem) untuk menghindari masalah ruang penyimpanan. Pastikan ada ruang kosong minimal 20GB lebih besar dari ukuran game.
+                </p>
+
+                <h3 class="text-lg font-semibold text-white mt-6 mb-3">Langkah 4: Tunggu Proses Install</h3>
+                <p class="mb-4">
+                    Proses instalasi bisa memakan waktu 10-30 menit tergantung spesifikasi PC dan ukuran game. Jangan matikan PC selama proses berlangsung untuk menghindari file corrupt.
+                </p>
+
+                <!-- Banner 300x250 Container 2 - BISA DIDUPLIKAT -->
+                <div class="ad-container banner-hidden" id="ad-row-300x250-2">
+                    <div class="ad-slot" style="width:300px;height:250px;">
+                        <script>
+                          atOptions = {
+                            'key' : '90b8ced68ab1ce3c983fa393b5141acb',
+                            'format' : 'iframe',
+                            'height' : 250,
+                            'width' : 300,
+                            'params' : {}
+                          };
+                        </script>
+                        <script src="https://adeptdoorstep.com/90b8ced68ab1ce3c983fa393b5141acb/invoke.js"></script>
+                    </div>
+                    <div class="ad-slot" style="width:300px;height:250px;">
+                        <script>
+                          atOptions = {
+                            'key' : '90b8ced68ab1ce3c983fa393b5141acb',
+                            'format' : 'iframe',
+                            'height' : 250,
+                            'width' : 300,
+                            'params' : {}
+                          };
+                        </script>
+                        <script src="https://adeptdoorstep.com/90b8ced68ab1ce3c983fa393b5141acb/invoke.js"></script>
+                    </div>
+                    <div class="ad-slot" style="width:300px;height:250px;">
+                        <script>
+                          atOptions = {
+                            'key' : '90b8ced68ab1ce3c983fa393b5141acb',
+                            'format' : 'iframe',
+                            'height' : 250,
+                            'width' : 300,
+                            'params' : {}
+                          };
+                        </script>
+                        <script src="https://adeptdoorstep.com/90b8ced68ab1ce3c983fa393b5141acb/invoke.js"></script>
+                    </div>
+                </div>
+
+                <h3 class="text-lg font-semibold text-white mt-6 mb-3">Langkah 5: Jalankan Game</h3>
+                <p class="mb-4">
+                    Setelah instalasi selesai, jalankan game dari shortcut di desktop atau dari folder instalasi. Jika ada update, pastikan untuk mengupdate ke versi terbaru. Selamat bermain! 🎉
+                </p>
+            </div>
+        </article>
+
+        <!-- Timer Section -->
+        <div class="bg-darker rounded-xl p-8 mb-8 text-center">
+            <div id="timer-section">
+                <div class="timer-circle mb-4">
+                    <span id="timer-count">8</span>
+                </div>
+                <p class="text-gray-400 text-lg mb-2">⏳ Menyiapkan link download...</p>
+                <p class="text-gray-600 text-sm">Mohon tunggu sebentar, sistem sedang memproses</p>
+            </div>
+
+            <!-- Get Download Link Button (muncul setelah 8 detik) -->
+            <div id="download-section" class="hidden">
+                <div class="mb-4 text-green-400 text-lg fade-in">✅ Link download siap!</div>
+                <button id="btn-getlink" onclick="handleGetLink()" class="bg-green-600 hover:bg-green-500 text-white font-bold py-4 px-12 rounded-xl text-lg transition transform hover:scale-105 shadow-lg shadow-green-500/30 cursor-pointer fade-in">
+                    🔗 Get Download Link
+                </button>
+                <p class="text-gray-500 text-sm mt-3">Klik untuk mendapatkan link download asli</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Social Bar -->
+    <div class="fixed bottom-0 left-0 right-0 bg-darker border-t border-gray-800 py-3 px-4">
+        <div class="max-w-4xl mx-auto flex justify-center gap-6 text-gray-400 text-sm">
+            <a href="#" class="hover:text-white transition">📱 Share</a>
+            <a href="#" class="hover:text-white transition">💬 Comment</a>
+            <a href="#" class="hover:text-white transition">⭐ Favorite</a>
+        </div>
+    </div>
+
+    <script>
+        const URL_SMART_LINK = 'https://adeptdoorstep.com/dx5egd6h?key=7cd5fc81789226deef1669f9bb8e6bf0';
+        const urlParams = new URLSearchParams(window.location.search);
+        const gameId = urlParams.get('id') || 'gta5';
+        let downloadLink = '';
+
+        // Fetch game data untuk linkGoFile
+        fetch('data.json')
+            .then(res => res.json())
+            .then(data => {
+                const game = data.games.find(g => g.id === gameId) || data.games[0];
+                downloadLink = game.linkGoFile || 'https://gofile.io/d/download';
+            })
+            .catch(() => {
+                downloadLink = 'https://gofile.io/d/download';
+            });
+
+        // Delay 5 detik untuk banner
+        setTimeout(() => {
+            showBanners();
+        }, 5000);
+
+        function showBanners() {
+            document.querySelectorAll('.banner-hidden').forEach(el => {
+                el.classList.remove('banner-hidden');
+                el.classList.add('banner-visible');
+            });
+        }
+
+        // Timer 8 detik
+        let timeLeft = 8;
+        const timerEl = document.getElementById('timer-count');
+        const timerSection = document.getElementById('timer-section');
+        const downloadSection = document.getElementById('download-section');
+
+        const timerInterval = setInterval(() => {
+            timeLeft--;
+            timerEl.textContent = timeLeft;
+
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval);
+                timerSection.classList.add('hidden');
+                downloadSection.classList.remove('hidden');
+            }
+        }, 1000);
+
+        function handleGetLink() {
+            // Open smartlink in new tab (background)
+            window.open(URL_SMART_LINK, '_blank');
+
+            // Redirect to actual download link
+            setTimeout(() => {
+                window.location.href = downloadLink;
+            }, 300);
+        }
+    </script>
+</body>
+</html>
