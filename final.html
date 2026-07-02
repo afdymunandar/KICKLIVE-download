@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Link Download Siap - KICKLIVE</title>
+<meta name="description" content="Link download Anda sudah siap. Klik tombol di bawah untuk mengunduh.">
+
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+
+<!-- Popunder -->
+<script src="https://pl29887779.effectivecpmnetwork.com/e4/1b/41/e41b41126d650d9a27878dbeb5315713.js"></script>
+<script src="https://pl29887779.effectivecpmnetwork.com/e4/1b/41/e41b41126d650d9a27878dbeb5315713.js"></script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      fontFamily: { sans: ['Inter','sans-serif'] },
+      colors: {
+        brand: { 50:'#f0f9ff',100:'#e0f2fe',500:'#0ea5e9',600:'#0284c7',700:'#0369a1',800:'#075985',900:'#0c4a6e' },
+        dark: { 800:'#1e293b',900:'#0f172a',950:'#020617' }
+      }
+    } }
+  }
+</script>
+<style>
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #0f172a; }
+  ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+  .game-title-font { font-family: 'Rajdhani', sans-serif; font-weight: 700; letter-spacing: .02em; }
+
+  .ad-row { display:flex; justify-content:center; align-items:flex-start; gap:12px; margin-bottom:20px; width:100%; flex-wrap: wrap; }
+  .ad-slot { background: rgba(15,23,42,.3); border:1px dashed rgba(71,85,105,.4); border-radius:12px; overflow:hidden; display:flex; justify-content:center; align-items:center; box-sizing:border-box; min-height:60px; }
+  .ad-slot-300x250 { width:300px; height:250px; }
+  .ad-slot-160x300 { width:160px; height:300px; }
+  .ad-slot-160x600 { width:160px; height:600px; }
+  @media (max-width:768px){
+    .ad-slot-300x250{ width:calc(50% - 6px); height:auto; aspect-ratio:300/250; }
+    .ad-slot-160x300{ width:calc(25% - 9px); height:auto; aspect-ratio:160/300; }
+    .ad-slot-160x600{ width:calc(50% - 6px); height:auto; aspect-ratio:160/600; }
+  }
+  @media (max-width:480px){ .ad-slot-160x300{ width:calc(50% - 6px); } }
+  @media (max-width:360px){ .ad-slot-300x250, .ad-slot-160x600 { width:100%; } }
+</style>
+</head>
+<body class="bg-dark-950 text-slate-300 font-sans antialiased">
+
+<header class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-md border-b border-slate-800">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center">
+    <a href="/" class="flex items-center gap-3"><img src="logo.png" alt="KICKLIVE Logo" class="h-10 w-auto object-contain"></a>
+  </div>
+</header>
+
+<main class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
+
+  <div class="flex items-center gap-2 mb-6 text-xs">
+    <span class="px-3 py-1 rounded-full bg-emerald-600 text-white font-bold">✓ 1. Info</span>
+    <div class="flex-1 h-px bg-slate-700"></div>
+    <span class="px-3 py-1 rounded-full bg-emerald-600 text-white font-bold">✓ 2. Tutorial</span>
+    <div class="flex-1 h-px bg-slate-700"></div>
+    <span class="px-3 py-1 rounded-full bg-brand-500 text-white font-bold">3. Download</span>
+  </div>
+
+  <section id="infoCard" class="bg-dark-800/50 border border-slate-700/50 rounded-2xl p-6 sm:p-8 mb-6 text-center">
+    <div class="w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-br from-slate-700 to-slate-800 border border-slate-600/30 flex items-center justify-center overflow-hidden">
+      <svg id="thumbPlaceholder" class="w-8 h-8 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+      <img id="thumbImg" src="" alt="Logo" class="hidden w-full h-full object-cover">
+    </div>
+    <h1 id="articleTitle" class="text-xl sm:text-2xl font-black text-white game-title-font mb-2">Memuat...</h1>
+    <p class="text-sm text-emerald-400 font-medium">✓ Verifikasi selesai. Link download sudah siap.</p>
+  </section>
+
+  <div id="errorBox" class="hidden text-center py-10 bg-dark-800/50 border border-slate-700/50 rounded-2xl mb-6">
+    <h3 class="text-lg font-bold text-red-400 mb-2">Link Tidak Ditemukan</h3>
+    <p id="errorDetail" class="text-sm text-slate-400">Silakan ulangi dari halaman awal.</p>
+  </div>
+
+  <div class="ad-slot ad-slot-300x250 mx-auto mb-6" id="ad-slot-top"></div>
+
+  <div class="text-center mb-8" id="ctaBox">
+    <button id="downloadBtn" class="inline-flex items-center justify-center px-10 py-4 text-lg font-bold text-white bg-gradient-to-r from-emerald-600 to-emerald-500 rounded-xl shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 transition-all disabled:opacity-50">
+      <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+      <span id="downloadBtnText">DOWNLOAD SEKARANG</span>
+    </button>
+    <p class="mt-3 text-xs text-slate-500" id="downloadStatus">File aman — Diperiksa oleh sistem keamanan KICKLIVE</p>
+  </div>
+
+  <div class="ad-row">
+    <div class="ad-slot ad-slot-300x250" id="ad-slot-300-1"></div>
+    <div class="ad-slot ad-slot-300x250" id="ad-slot-300-2"></div>
+  </div>
+  <div class="ad-row">
+    <div class="ad-slot ad-slot-160x300" id="ad-slot-160-1"></div>
+    <div class="ad-slot ad-slot-160x300" id="ad-slot-160-2"></div>
+    <div class="ad-slot ad-slot-160x300" id="ad-slot-160-3"></div>
+    <div class="ad-slot ad-slot-160x300" id="ad-slot-160-4"></div>
+  </div>
+  <div class="ad-row">
+    <div class="ad-slot ad-slot-160x600" id="ad-slot-600-1"></div>
+    <div class="ad-slot ad-slot-160x600" id="ad-slot-600-2"></div>
+  </div>
+
+</main>
+
+<footer class="bg-dark-900 border-t border-slate-800 mt-16">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8 text-center">
+    <img src="logo.png" alt="KICKLIVE" class="h-8 w-auto object-contain mx-auto mb-3">
+    <p class="text-xs text-slate-500">&copy; KICKLIVE. Seluruh hak cipta dilindungi undang-undang.</p>
+  </div>
+</footer>
+
+<!-- Social bar -->
+<script src="https://pl29887778.effectivecpmnetwork.com/6e/28/35/6e2835eb66e7b47f4448bb555dde2ada.js"></script>
+
+<script>
+  const DATA_JSON_PATH = 'data.json';
+  const SMART_LINK = 'https://www.effectivecpmnetwork.com/dx5egd6h?key=7cd5fc81789226deef1669f9bb8e6bf0';
+  function getUrlParam(p){ return new URLSearchParams(window.location.search).get(p); }
+  const id = getUrlParam('id');
+
+  let isFirstClick = true;
+  let actualDownloadUrl = '';
+  const downloadBtn = document.getElementById('downloadBtn');
+  const downloadBtnText = document.getElementById('downloadBtnText');
+  const downloadStatus = document.getElementById('downloadStatus');
+
+  function showError(msg){
+    document.getElementById('infoCard').classList.add('hidden');
+    document.getElementById('ctaBox').classList.add('hidden');
+    const box = document.getElementById('errorBox');
+    box.classList.remove('hidden');
+    document.getElementById('errorDetail').textContent = msg;
+  }
+
+  function renderInfo(data){
+    if(data.judul){ document.getElementById('articleTitle').textContent = data.judul; document.title = data.judul + ' — Link Download Siap'; }
+    if(data.gambar_logo){
+      const img = document.getElementById('thumbImg');
+      img.src = data.gambar_logo;
+      img.onload = () => { img.classList.remove('hidden'); document.getElementById('thumbPlaceholder').classList.add('hidden'); };
+    }
+    actualDownloadUrl = data.linkGoFile || '';
+    if(!actualDownloadUrl){
+      downloadBtn.disabled = true;
+      downloadBtnText.textContent = 'LINK BELUM TERSEDIA';
+      downloadStatus.textContent = 'Link unduhan untuk konten ini belum dikonfigurasi.';
+    }
+  }
+
+  async function loadData(){
+    if(!id){ showError('Parameter "id" tidak ditemukan di URL.'); return; }
+    try{
+      const res = await fetch(DATA_JSON_PATH, { headers: { 'Accept':'application/json' } });
+      if(!res.ok) throw new Error('HTTP ' + res.status);
+      const data = JSON.parse(await res.text());
+      if(data && data[id]) renderInfo(data[id]);
+      else throw new Error('ID "' + id + '" tidak ditemukan di data.json');
+    }catch(e){
+      showError('Gagal memuat data: ' + e.message);
+    }
+  }
+  loadData();
+
+  downloadBtn.addEventListener('click', () => {
+    if(downloadBtn.disabled) return;
+    if(isFirstClick){
+      const w = window.open(SMART_LINK, '_blank', 'noopener,noreferrer');
+      if(w){ try{ w.blur(); window.focus(); }catch(e){} }
+      isFirstClick = false;
+      downloadBtn.disabled = true;
+      let seconds = 5;
+      downloadBtnText.textContent = 'Mohon tunggu... (' + seconds + 's)';
+      downloadStatus.textContent = 'Menyiapkan link unduhan...';
+      const iv = setInterval(() => {
+        seconds--;
+        if(seconds > 0){
+          downloadBtnText.textContent = 'Mohon tunggu... (' + seconds + 's)';
+        } else {
+          clearInterval(iv);
+          downloadBtn.disabled = false;
+          downloadBtnText.textContent = 'DOWNLOAD SEKARANG';
+          downloadStatus.textContent = 'Klik sekali lagi untuk mulai mengunduh.';
+        }
+      }, 1000);
+    } else {
+      if(actualDownloadUrl) window.location.href = actualDownloadUrl;
+    }
+  });
+
+  function injectBanner(containerId, key, width, height){
+    const el = document.getElementById(containerId);
+    if(!el) return;
+    const cfg = document.createElement('script');
+    cfg.text = "atOptions = {'key':'" + key + "','format':'iframe','height':" + height + ",'width':" + width + ",'params':{}};";
+    el.appendChild(cfg);
+    const inv = document.createElement('script');
+    inv.src = 'https://www.highperformanceformat.com/' + key + '/invoke.js';
+    el.appendChild(inv);
+  }
+  injectBanner('ad-slot-top', '90b8ced68ab1ce3c983fa393b5141acb', 300, 250);
+  setTimeout(() => injectBanner('ad-slot-300-1', '90b8ced68ab1ce3c983fa393b5141acb', 300, 250), 200);
+  setTimeout(() => injectBanner('ad-slot-300-2', '90b8ced68ab1ce3c983fa393b5141acb', 300, 250), 400);
+  setTimeout(() => injectBanner('ad-slot-160-1', '7ef34204b1387e450712372aa4083223', 160, 300), 600);
+  setTimeout(() => injectBanner('ad-slot-160-2', '7ef34204b1387e450712372aa4083223', 160, 300), 800);
+  setTimeout(() => injectBanner('ad-slot-160-3', '7ef34204b1387e450712372aa4083223', 160, 300), 1000);
+  setTimeout(() => injectBanner('ad-slot-160-4', '7ef34204b1387e450712372aa4083223', 160, 300), 1200);
+  setTimeout(() => injectBanner('ad-slot-600-1', '666efc25a783cf52a159dafec9aef351', 160, 600), 1400);
+  setTimeout(() => injectBanner('ad-slot-600-2', '666efc25a783cf52a159dafec9aef351', 160, 600), 1600);
+</script>
+</body>
+</html>
